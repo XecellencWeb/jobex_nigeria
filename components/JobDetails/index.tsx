@@ -12,7 +12,7 @@ import { AJob } from '../JobListings';
 const JobDetail = ({jobId}:{
     jobId:any
 }) => {
-    const job:AJob = Jobs.find(job => job.id == jobId)
+    const job:any = Jobs.find(job => job.id == jobId)
   return (
     <div className="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
       <div className="container">
