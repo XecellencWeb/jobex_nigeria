@@ -4,10 +4,11 @@ import image1 from "@/resource/img/carousel-1.jpg";
 import image2 from "@/resource/img/carousel-2.jpg";
 type HeroProps = {
   isHomage?: boolean,
-  name?: string
+  name?: string,
+  text?:string,
 }
 
-const Hero = ({isHomage = false,name}:HeroProps) => {
+const Hero = ({isHomage = false,name,text}:HeroProps) => {
   const bgStyle = {
     background: "rgba(43, 57, 64, .5)",
   };
@@ -15,7 +16,7 @@ const Hero = ({isHomage = false,name}:HeroProps) => {
     return (
       <div className=" py-5 bg-dark page-header mb-5">
       <div className="container my-5 pt-5 pb-4">
-          <h1 className="display-3 text-white mb-3 animated slideInDown">{name || 'About Us'}</h1>
+          <h1 className="display-3 text-white mb-3 animated slideInDown">{text || name || 'About Us'}</h1>
           <nav aria-label="breadcrumb">
               <ol className="breadcrumb text-uppercase">
                   <li className="breadcrumb-item"><a href="#">Home</a></li>

@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "job_category": "Software Development",
+        "total_vacancy": 20
+    },
+    {
+        "id": 2,
+        "job_category": "Marketing",
+        "total_vacancy": 15
+    },
+    {
+        "id": 3,
+        "job_category": "Data Science",
+        "total_vacancy": 10
+    },
+    {
+        "id": 4,
+        "job_category": "Design",
+        "total_vacancy": 8
+    },
+    {
+        "id": 5,
+        "job_category": "Finance",
+        "total_vacancy": 12
+    },
+    {
+        "id": 6,
+        "job_category": "Customer Service",
+        "total_vacancy": 7
+    },
+    {
+        "id": 7,
+        "job_category": "Sales",
+        "total_vacancy": 11
+    },
+    {
+        "id": 8,
+        "job_category": "Human Resources",
+        "total_vacancy": 6
+    }
+]

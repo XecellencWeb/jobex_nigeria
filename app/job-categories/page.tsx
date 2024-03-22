@@ -1,14 +1,15 @@
 import Categories from '@/components/Categories'
+import JobListings from '@/components/JobListings'
 import Hero from '@/components/hero'
 import React from 'react'
 
-const JobCategoriesPage = () => {
+const JobsPage = () => {
   return (
     <>
-      <Hero name='Job List'/>
+      <Hero name='Categories'/>
       <Categories/>
     </>
   )
 }
 
-export default JobCategoriesPage
+export default JobsPage

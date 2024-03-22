@@ -1,6 +1,14 @@
+'use client'
+
+import { NotAcceptPages } from "@/constants/global";
+import { usePathname } from "next/navigation";
 import React from "react";
 
+
+
 const Footer = () => {
+  const pathname: string = usePathname();
+  if (NotAcceptPages.includes(pathname)) return;
   return (
     <div
       className="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn"
@@ -76,7 +84,7 @@ const Footer = () => {
             <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
             <div
               className="position-relative mx-auto"
-              style={{maxWidth: "400px"}}
+              style={{ maxWidth: "400px" }}
             >
               <input
                 className="form-control bg-transparent w-100 py-3 ps-4 pe-5"

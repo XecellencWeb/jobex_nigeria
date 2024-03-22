@@ -12,18 +12,18 @@ const Search = () => {
                     </div>
                     <div className="col-md-4">
                         <select className="form-select border-0">
-                            <option selected>Category</option>
-                            <option value="1">Category 1</option>
-                            <option value="2">Category 2</option>
-                            <option value="3">Category 3</option>
+                            <option >Category</option>
+                            <option >Category 1</option>
+                            <option >Category 2</option>
+                            <option >Category 3</option>
                         </select>
                     </div>
                     <div className="col-md-4">
                         <select className="form-select border-0">
-                            <option selected>Location</option>
-                            <option value="1">Location 1</option>
-                            <option value="2">Location 2</option>
-                            <option value="3">Location 3</option>
+                            <option >Location</option>
+                            <option >Location 1</option>
+                            <option >Location 2</option>
+                            <option >Location 3</option>
                         </select>
                     </div>
                 </div>

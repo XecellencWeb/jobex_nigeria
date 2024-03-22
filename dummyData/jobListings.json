@@ -1,0 +1,214 @@
+[
+    {
+        "id": 1,
+        "job_name": "Software Engineer",
+        "location": "San Francisco, CA",
+        "job_nature": "Full-time",
+        "salary": "$100,000 - $120,000",
+        "job_description": "We are seeking a skilled software engineer to join our team.",
+        "responsibility": "Develop and maintain high-quality software applications.",
+        "qualifications": "Bachelor's degree in Computer Science or related field. Proficiency in Java, Python, or similar languages.",
+        "vacancy": 5,
+        "created_at": "2024-03-07",
+        "ending_date": "2024-04-30",
+        "company_details": {
+            "name": "ABC Tech Inc.",
+            "website": "www.abctech.com",
+            "address": "123 Main St, San Francisco, CA",
+            "about_company": "ABC Tech Inc. is a leading technology company specializing in innovative software solutions for various industries."
+        },
+       "categories":[
+        ""
+       ]
+    },
+    {
+        "id": 2,
+        "job_name": "Marketing Manager",
+        "location": "New York, NY",
+        "job_nature": "Full-time",
+        "salary": "$80,000 - $100,000",
+        "job_description": "Seeking an experienced marketing manager to lead our marketing efforts.",
+        "responsibility": "Develop and implement marketing strategies. Manage marketing campaigns and analyze their effectiveness.",
+        "qualifications": "Bachelor's degree in Marketing or related field. Previous experience in marketing management.",
+        "vacancy": 3,
+        "created_at": "2024-03-07",
+        "ending_date": "2024-05-15",
+        "company_details": {
+            "name": "XYZ Marketing Agency",
+            "website": "www.xyzmarketing.com",
+            "address": "456 Broadway, New York, NY",
+            "about_company": "XYZ Marketing Agency is a dynamic marketing firm dedicated to helping businesses achieve their goals through innovative marketing solutions."
+        }
+    },
+    {
+        "id": 3,
+        "job_name": "Data Scientist",
+        "location": "Seattle, WA",
+        "job_nature": "Full-time",
+        "salary": "$90,000 - $110,000",
+        "job_description": "We are looking for a talented data scientist to join our analytics team.",
+        "responsibility": "Analyze large datasets to extract valuable insights. Develop predictive models and algorithms.",
+        "qualifications": "Master's degree in Data Science, Statistics, or related field. Proficiency in Python, R, or similar tools.",
+        "vacancy": 2,
+        "created_at": "2024-03-07",
+        "ending_date": "2024-05-30",
+        "company_details": {
+            "name": "DataTech Solutions",
+            "website": "www.datatech.com",
+            "address": "789 Oak St, Seattle, WA",
+            "about_company": "DataTech Solutions is a leading provider of data analytics solutions, helping businesses harness the power of their data to make informed decisions."
+        }
+    },
+    {
+        "id": 4,
+        "job_name": "Graphic Designer",
+        "location": "Los Angeles, CA",
+        "job_nature": "Contract",
+        "salary": "$30 - $40 per hour",
+        "job_description": "Seeking a creative graphic designer to work on various design projects.",
+        "responsibility": "Design marketing materials, including brochures, logos, and advertisements. Collaborate with the marketing team to develop design concepts.",
+        "qualifications": "Bachelor's degree in Graphic Design or related field. Proficiency in Adobe Creative Suite.",
+        "vacancy": 1,
+        "created_at": "2024-03-07",
+        "ending_date": "2024-06-15",
+        "company_details": {
+            "name": "Creative Designs Agency",
+            "website": "www.creativedesigns.com",
+            "address": "101 Pine Ave, Los Angeles, CA",
+            "about_company": "Creative Designs Agency is a boutique design firm specializing in creating visually stunning and effective design solutions for clients across various industries."
+        }
+    },
+    {
+        "id": 5,
+        "job_name": "Financial Analyst",
+        "location": "Chicago, IL",
+        "job_nature": "Full-time",
+        "salary": "$70,000 - $90,000",
+        "job_description": "We are seeking a detail-oriented financial analyst to join our finance team.",
+        "responsibility": "Conduct financial analysis, prepare forecasts, and generate financial reports. Assist in budgeting and financial planning processes.",
+        "qualifications": "Bachelor's degree in Finance, Accounting, or related field. Strong analytical and Excel skills.",
+        "vacancy": 3,
+        "created_at": "2024-03-07",
+        "ending_date": "2024-05-20",
+        "company_details": {
+            "name": "FinanceCorp",
+            "website": "www.financecorp.com",
+            "address": "567 Main St, Chicago, IL",
+            "about_company": "FinanceCorp is a leading financial services company providing expertise in financial analysis, investment management, and strategic financial planning."
+        }
+    },
+    {
+        "id": 6,
+        "job_name": "Product Manager",
+        "location": "Austin, TX",
+        "job_nature": "Full-time",
+        "salary": "$110,000 - $130,000",
+        "job_description": "We're looking for an experienced product manager to lead the development and launch of new products.",
+        "responsibility": "Define product vision, strategy, and roadmap. Collaborate with cross-functional teams to execute product plans.",
+        "qualifications": "Bachelor's degree in Business, Engineering, or related field. Proven experience in product management.",
+        "vacancy": 2,
+        "created_at": "2024-03-07",
+        "ending_date": "2024-06-30",
+        "company_details": {
+            "name": "InnovateTech Solutions",
+            "website": "www.innovatetech.com",
+            "address": "321 Elm St, Austin, TX",
+            "about_company": "InnovateTech Solutions is a technology company focused on developing innovative solutions that drive business growth and efficiency."
+        }
+    },
+    {
+        "id": 7,
+        "job_name": "HR Specialist",
+        "location": "Boston, MA",
+        "job_nature": "Full-time",
+        "salary": "$60,000 - $80,000",
+        "job_description": "Seeking an HR specialist to support various HR functions, including recruitment, onboarding, and employee relations.",
+        "responsibility": "Manage full-cycle recruitment process. Handle employee relations issues and provide HR support to employees.",
+        "qualifications": "Bachelor's degree in Human Resources or related field. HR certification is a plus.",
+        "vacancy": 1,
+        "created_at": "2024-03-07",
+        "ending_date": "2024-06-10",
+        "company_details": {
+            "name": "HR Dynamics",
+            "website": "www.hrdynamics.com",
+            "address": "789 Maple Ave, Boston, MA",
+            "about_company": "HR Dynamics is a human resources consulting firm specializing in providing HR solutions to businesses of all sizes."
+        }
+    },
+    {
+        "id": 8,
+        "job_name": "Sales Representative",
+        "location": "Miami, FL",
+        "job_nature": "Full-time",
+        "salary": "$50,000 - $70,000",
+        "job_description": "We are seeking motivated sales representatives to drive sales and revenue growth.",
+        "responsibility": "Generate leads, cold call prospects, and close sales deals. Build and maintain relationships with customers.",
+        "qualifications": "Bachelor's degree in Business or related field. Proven track record in sales.",
+        "vacancy": 3,
+        "created_at": "2024-03-07",
+        "ending_date": "2024-06-05",
+        "company_details": {
+            "name": "Sunshine Sales Agency",
+            "website": "www.sunshinesales.com",
+            "address": "456 Ocean Dr, Miami, FL",
+            "about_company": "Sunshine Sales Agency is a dynamic sales organization dedicated to delivering exceptional sales results for our clients."
+        }
+    },
+    {
+        "id": 9,
+        "job_name": "UX/UI Designer",
+        "location": "Denver, CO",
+        "job_nature": "Full-time",
+        "salary": "$80,000 - $100,000",
+        "job_description": "We are looking for a talented UX/UI designer to create intuitive and visually appealing user interfaces.",
+        "responsibility": "Design user-centric interfaces for web and mobile applications. Conduct user research and usability testing.",
+        "qualifications": "Bachelor's degree in Design or related field. Proficiency in design tools such as Sketch, Adobe XD, or Figma.",
+        "vacancy": 2,
+        "created_at": "2024-03-07",
+        "ending_date": "2024-06-20",
+        "company_details": {
+            "name": "DesignWorks Inc.",
+            "website": "www.designworksco.com",
+            "address": "123 Elm St, Denver, CO",
+            "about_company": "DesignWorks Inc. is a design agency specializing in creating user-centric digital experiences for clients across various industries."
+        }
+    },
+    {
+        "id": 10,
+        "job_name": "Project Manager",
+        "location": "Atlanta, GA",
+        "job_nature": "Full-time",
+        "salary": "$90,000 - $110,000",
+        "job_description": "Seeking a skilled project manager to lead and oversee various projects from initiation to completion.",
+        "responsibility": "Develop project plans, allocate resources, and monitor project progress. Ensure projects are delivered on time and within budget.",
+        "qualifications": "Bachelor's degree in Business Administration, Engineering, or related field. PMP certification is a plus.",
+        "vacancy": 1,
+        "created_at": "2024-03-07",
+        "ending_date": "2024-06-25",
+        "company_details": {
+            "name": "Project Solutions Group",
+            "website": "www.projectsgroup.com",
+            "address": "789 Peachtree St, Atlanta, GA",
+            "about_company": "Project Solutions Group is a project management consultancy firm specializing in delivering successful projects for clients in various industries."
+        }
+    },
+    {
+        "id": 11,
+        "job_name": "Customer Support Specialist",
+        "location": "Dallas, TX",
+        "job_nature": "Full-time",
+        "salary": "$45,000 - $55,000",
+        "job_description": "We are seeking friendly and customer-oriented individuals to join our customer support team.",
+        "responsibility": "Provide timely and professional assistance to customers via phone, email, and chat. Resolve customer inquiries and issues.",
+        "qualifications": "High school diploma or equivalent. Previous customer service experience preferred.",
+        "vacancy": 3,
+        "created_at": "2024-03-07",
+        "ending_date": "2024-06-15",
+        "company_details": {
+            "name": "Service Excellence Inc.",
+            "website": "www.serviceexcellence.com",
+            "address": "456 Main St, Dallas, TX",
+            "about_company": "Service Excellence Inc. is committed to delivering exceptional customer service solutions for clients, ensuring customer satisfaction and loyalty."
+        }
+    }
+]
