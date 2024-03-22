@@ -13,10 +13,6 @@ import React from 'react'
 // }
 
 const Job = ({params}:any) => {
-    const router = useRouter()
-    if(router.isFallback){
-        return <div>Loading...</div>
-    }
   return (
     <>
     <Hero name='Job Detail'/>
