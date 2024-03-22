@@ -3,7 +3,6 @@
 import { loginUser } from "@/actions/user";
 import { signUser } from "@/client/user";
 import ProviderGetter from "@/components/ProviderGetter";
-import { useAuthRedirect } from "@/hooks/UserRedirector";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useRef } from "react";
