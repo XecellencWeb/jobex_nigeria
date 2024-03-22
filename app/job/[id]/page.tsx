@@ -2,7 +2,6 @@
 import JobDetail from '@/components/JobDetails'
 import Hero from '@/components/hero'
 import React from 'react'
-import { useRouter } from 'next/router';
 
 // export async function getServerSideProps({params}:any){
 //     const {id} = params;
