@@ -37,12 +37,12 @@ const Home = () => {
     const userid = search.get('userid')
     const verified = await verifyUser({ userid, token });
     signUser({ userId: userid });
-    
+    console.log(verified)
     if (verified === roles[1]) {
       console.log("entered");
       return (location.href = `/company?user=${userid}&accesstoken=${company_access_token}`);
     }
-
+    
     if (verified) location.href = "/";
   };
 
