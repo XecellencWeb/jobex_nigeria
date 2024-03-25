@@ -18,7 +18,8 @@ const RegisterCompany = ({ searchParams }: any) => {
     if (searchParams.accesstoken !== company_access_token) location.href = "/";
     const userId = searchParams?.user;
     if (!userId) location.href = "/";
-    const user = await getUser(userId);
+    const theUser = await getUser(userId);
+    const user = JSON.parse(theUser)
     if (!user) location.href = "/";
     setOwner(user.fullName);
     setOwnerId(userId);

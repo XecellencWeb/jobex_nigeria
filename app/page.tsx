@@ -33,17 +33,16 @@ const Home = () => {
   }, [session]);
 
   const userVerify = async () => {
-    console.log('working')
     const token = search.get('token')
     const userid = search.get('userid')
     const verified = await verifyUser({ userid, token });
-    console.log('working 2')
     signUser({ userId: userid });
+    
     if (verified === roles[1]) {
       console.log("entered");
       return (location.href = `/company?user=${userid}&accesstoken=${company_access_token}`);
     }
-    console.log('working 3')
+
     if (verified) location.href = "/";
   };
 

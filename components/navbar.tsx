@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { NotAcceptPages } from "@/constants/global";
+import { NotAcceptPages, roles } from "@/constants/global";
 import { auth_access_token } from "@/constants/token";
 
 const ProfileComponent = () => {
@@ -102,7 +102,7 @@ const Navbar = () => {
           </div>
           {!user ? (
             <Link
-              href={`/signup?role=jop-poster&accesstoken=${auth_access_token}`}
+              href={`/signup?role=${roles[1]}&accesstoken=${auth_access_token}`}
               className="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block"
             >
               Post A Job<i className="fa fa-arrow-right ms-3"></i>
