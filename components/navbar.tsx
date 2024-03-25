@@ -40,7 +40,7 @@ const ProfileComponent = () => {
 const Navbar = () => {
   const pathname: string = usePathname();
   const [user, setUser] = useState();
-
+   console.log(user)
   useEffect(() => {
     return () => {
       setUser(signedUser());
