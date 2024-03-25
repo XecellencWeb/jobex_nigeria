@@ -8,7 +8,6 @@ import Image from "next/image";
 import { NotAcceptPages } from "@/constants/global";
 import { auth_access_token } from "@/constants/token";
 
-
 const ProfileComponent = () => {
   const navigate = useRouter();
   return (
@@ -24,7 +23,7 @@ const ProfileComponent = () => {
       <div className="profile-menus">
         <button
           onClick={() => {
-            console.log('Logged Out')
+            console.log("Logged Out");
             logOutFunc();
             location.reload();
           }}
@@ -40,20 +39,16 @@ const ProfileComponent = () => {
 const Navbar = () => {
   const pathname: string = usePathname();
   const [user, setUser] = useState();
-   console.log(user)
+  console.log(user);
   useEffect(() => {
-    return () => {
-      setUser(signedUser());
-    };
+    setUser(signedUser());
   }, []);
-
-  
 
   if (NotAcceptPages.includes(pathname)) return;
 
   return (
     <>
-      {!signedUser() && (
+      {!user && (
         <div className="reg-container">
           <Link href="/login" className="reg login">
             Log in
