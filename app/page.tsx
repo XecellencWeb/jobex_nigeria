@@ -11,27 +11,30 @@ import Testimonies from "@/components/testimonies";
 import { roles } from "@/constants/global";
 import { company_access_token, provider_token } from "@/constants/token";
 import { useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 
-const Home = ({ searchParams }: any) => {
+
+const Home = () => {
   const navigate = useRouter();
+  const search = useSearchParams()
   const { data: session } = useSession();
 
   useEffect(() => {
     return () => {
-      if (JSON.parse(searchParams.verify || null)) userVerify();
+      if (JSON.parse(search.get('verify') || 'null')) userVerify();
     };
-  }, []);
+  });
 
   useEffect(() => {
     return () => {
-      if (JSON.parse(searchParams.signedin || null)) signUserIn();
+      if (JSON.parse(search.get('signedin') || 'null')) signUserIn();
     };
   }, [session]);
 
   const userVerify = async () => {
-    const { token, userid } = searchParams;
+    const token = search.get('token')
+    const userid = search.get('userid')
     const verified = await verifyUser({ userid, token });
     signUser({ userId: userid });
     if (verified === roles[1]) {
@@ -42,7 +45,7 @@ const Home = ({ searchParams }: any) => {
   };
 
   const signUserIn = () => {
-    const { providertoken } = searchParams;
+    const providertoken = search.get('providertoken')
     if (providertoken !== provider_token) return;
     if (!session) return;
     //@ts-ignore

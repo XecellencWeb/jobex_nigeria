@@ -28,14 +28,15 @@ export async function verifyUser({
   userid,
   token,
 }: {
-  userid: string;
-  token: string;
+  userid: string | null;
+  token: string | null;
 }) {
+  if (!userid || !token) return;
   if (token != process.env.verify_user_token) return;
   const verifiedUser = await User.findById(userid);
   verifiedUser.isVerified = true;
   await verifiedUser.save();
-  console.log(verifiedUser.role)
+  console.log(verifiedUser.role);
   if (verifiedUser.role === roles[1]) return roles[1];
   return true;
 }
@@ -61,7 +62,7 @@ export async function getUserRole(userId: string) {
   return user.role;
 }
 
-export async function getUser(userId:string){
- const user = await User.findById(userId)
- return user
+export async function getUser(userId: string) {
+  const user = await User.findById(userId);
+  return user;
 }

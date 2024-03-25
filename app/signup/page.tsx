@@ -4,16 +4,19 @@ import { createUser } from "@/actions/user";
 import ProviderGetter from "@/components/ProviderGetter";
 import { auth_access_token } from "@/constants/token";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import React, { ReactNode, useEffect, useRef, useState } from "react";
 
-const Signup = ({ searchParams }: any) => {
+const Signup = () => {
+  const search = useSearchParams()
   const submitForm: any = useRef(null);
-  const [role, setRole] = useState(null);
+  const [role, setRole] = useState<any>(null);
   useEffect(() => {
     return () => {
-      const role = searchParams?.role;
+      const role = search.get('role')
+      
       if (role) {
-        if (searchParams.accesstoken !== auth_access_token) return;
+        if (search.get('accesstoken') !== auth_access_token) return;
         localStorage.setItem("jobbex_user_role", role);
         setRole(role);
       }
