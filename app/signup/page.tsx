@@ -13,13 +13,10 @@ const Signup = () => {
   const [role, setRole] = useState<any>(null);
   useEffect(() => {
     const role = search.get("role");
-    console.log("no role");
     if (role) {
-      console.log("role exist");
       if (search.get("accesstoken") !== auth_access_token) return;
       localStorage.setItem("jobbex_user_role", role);
       setRole(role);
-      console.log(role);
     }
   }, []);
   return (

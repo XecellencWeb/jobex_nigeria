@@ -19,11 +19,10 @@ const RegisterCompany = ({ searchParams }: any) => {
     const userId = searchParams?.user;
     if (!userId) location.href = "/";
     const theUser = await getUser(userId);
-    const user = JSON.parse(theUser)
+    const user = JSON.parse(theUser);
     if (!user) location.href = "/";
     setOwner(user.fullName);
     setOwnerId(userId);
-    navigate.replace("/company");
   };
   return (
     <div className="container">
@@ -37,7 +36,7 @@ const RegisterCompany = ({ searchParams }: any) => {
             const companyCreated = await registerCompany(formData, ownerId);
             if (!companyCreated) return alert("all field must be filled");
             alert("company created successfully");
-            navigate.replace(`/companypage/${ownerId}`)
+            navigate.replace(`/companypage/${ownerId}`);
           }}
           method="post"
         >
