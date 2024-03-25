@@ -33,6 +33,7 @@ const Home = () => {
   }, [session]);
 
   const userVerify = async () => {
+    console.log('working')
     const token = search.get('token')
     const userid = search.get('userid')
     const verified = await verifyUser({ userid, token });
