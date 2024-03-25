@@ -53,7 +53,7 @@ const Navbar = () => {
 
   return (
     <>
-      {!user && (
+      {!signedUser() && (
         <div className="reg-container">
           <Link href="/login" className="reg login">
             Log in
