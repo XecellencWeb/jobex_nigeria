@@ -31,8 +31,9 @@ export async function verifyUser({
   userid: string | null;
   token: string | null;
 }) {
-  if (!userid || !token) return;
-  if (token != process.env.verify_user_token) return;
+  if (!userid || !token) return false;
+  if (token != process.env.verify_user_token) return false;
+  await connectDb()
   const verifiedUser = await User.findById(userid);
   verifiedUser.isVerified = true;
   await verifiedUser.save();
@@ -42,6 +43,7 @@ export async function verifyUser({
 }
 
 export async function loginUser({ email, password }: any) {
+  await connectDb()
   const userExist = await User.findOne({ email });
   if (!userExist) return false;
   if (userExist.password !== password) return false;
@@ -50,6 +52,7 @@ export async function loginUser({ email, password }: any) {
 }
 
 export async function setUserRole({ userId, role }: any) {
+  await connectDb()
   const user = await User.findById(userId);
   if (user.role) return false;
   user.role = role;
@@ -58,11 +61,13 @@ export async function setUserRole({ userId, role }: any) {
 }
 
 export async function getUserRole(userId: string) {
+  await connectDb()
   const user = await User.findById(userId);
   return user.role;
 }
 
 export async function getUser(userId: string) {
+  await connectDb()
   const user = await User.findById(userId);
   return user;
 }
