@@ -8,20 +8,19 @@ import { useSearchParams } from "next/navigation";
 import React, { ReactNode, useEffect, useRef, useState } from "react";
 
 const Signup = () => {
-  const search = useSearchParams()
+  const search = useSearchParams();
   const submitForm: any = useRef(null);
   const [role, setRole] = useState<any>(null);
   useEffect(() => {
-    return () => {
-      const role = search.get('role')
-      console.log(role)
-      if (role) {
-        if (search.get('accesstoken') !== auth_access_token) return;
-        localStorage.setItem("jobbex_user_role", role);
-        setRole(role);
-        console.log(role)
-      }
-    };
+    const role = search.get("role");
+    console.log("no role");
+    if (role) {
+      console.log("role exist");
+      if (search.get("accesstoken") !== auth_access_token) return;
+      localStorage.setItem("jobbex_user_role", role);
+      setRole(role);
+      console.log(role);
+    }
   }, []);
   return (
     <div className="form-container">
