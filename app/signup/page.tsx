@@ -14,11 +14,12 @@ const Signup = () => {
   useEffect(() => {
     return () => {
       const role = search.get('role')
-      
+      console.log(role)
       if (role) {
         if (search.get('accesstoken') !== auth_access_token) return;
         localStorage.setItem("jobbex_user_role", role);
         setRole(role);
+        console.log(role)
       }
     };
   }, []);
