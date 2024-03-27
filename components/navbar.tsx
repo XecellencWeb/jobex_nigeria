@@ -84,7 +84,7 @@ const Navbar = () => {
 
             <div className="nav-item dropdown">
               <Link
-                href="/jobs"
+                href="/job"
                 className="nav-link dropdown-toggle"
                 data-bs-toggle="dropdown"
               >
