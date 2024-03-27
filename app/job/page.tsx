@@ -1,3 +1,5 @@
+"use client"
+
 import { getJobs } from "@/actions/company";
 import JobListings from "@/components/JobListings";
 import Hero from "@/components/hero";
