@@ -1,4 +1,5 @@
 "use client";
+import logo from '@/resource/img/logo1-main.png'
 
 import { logOutFunc, signedUser } from "@/client/user";
 import Link from "next/link";
@@ -39,7 +40,6 @@ const ProfileComponent = () => {
 const Navbar = () => {
   const pathname: string = usePathname();
   const [user, setUser] = useState();
-  console.log(user);
   useEffect(() => {
     setUser(signedUser());
   }, []);
@@ -63,7 +63,7 @@ const Navbar = () => {
           href="/"
           className="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5"
         >
-          <h1 className="m-0 text-primary">JobEntry</h1>
+          <Image src={logo} alt='Website logo' width={150}/>
         </Link>
         <button
           type="button"

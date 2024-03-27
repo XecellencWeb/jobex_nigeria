@@ -16,7 +16,7 @@ const Job = ({params}:any) => {
   return (
     <>
     <Hero name='Job Detail'/>
-    <JobDetail jobId = {params}/>
+    <JobDetail jobId = {params.id}/>
     </>
   )
 }

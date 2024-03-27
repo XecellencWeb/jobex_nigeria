@@ -66,8 +66,11 @@ export async function getUserRole(userId: string) {
   return user.role;
 }
 
-export async function getUser(userId: string) {
+export async function getUser(userId: string | null) {
+  if(!userId)return
   await connectDb();
   const user = await User.findById(userId);
   return JSON.stringify(user);
 }
+
+

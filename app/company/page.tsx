@@ -3,23 +3,26 @@
 import { registerCompany } from "@/actions/company";
 import { getUser } from "@/actions/user";
 import { company_access_token } from "@/constants/token";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-const RegisterCompany = ({ searchParams }: any) => {
+const RegisterCompany = () => {
+  const search = useSearchParams();
   const navigate = useRouter();
   const [owner, setOwner] = useState<any>();
   const [ownerId, setOwnerId] = useState<any>();
+
   useEffect(() => {
     assignOwner();
   }, []);
 
   const assignOwner = async () => {
-    if (searchParams.accesstoken !== company_access_token) location.href = "/";
-    const userId = searchParams?.user;
+    if (search.get("accesstoken") !== company_access_token)
+      return (location.href = "/");
+    const userId = search.get("user");
     if (!userId) location.href = "/";
     const theUser = await getUser(userId);
-    const user = JSON.parse(theUser);
+    const user = JSON.parse(theUser || "null");
     if (!user) location.href = "/";
     setOwner(user.fullName);
     setOwnerId(userId);

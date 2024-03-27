@@ -1,18 +1,21 @@
-import Jobs from '@/dummyData/jobListings.json'
-import React from "react";
+"use client";
+
+import Jobs from "@/dummyData/jobListings.json";
+import React, { useEffect, useState } from "react";
 import logo1 from "@/resource/img/com-logo-1.jpg";
 import Image from "next/image";
-import { CateProps } from '../Categories';
-import { AJob } from '../JobListings';
+import { getJob } from "@/actions/company";
 
+const JobDetail = ({ jobId }: { jobId: any }) => {
+  const [job, setJob] = useState<any>();
+  useEffect(() => {
+    gettheJob();
+  }, []);
+  const gettheJob = async () => {
+    const job = await getJob(jobId);
+    setJob(JSON.parse(job || "null"));
+  };
 
-
-
-
-const JobDetail = ({jobId}:{
-    jobId:any
-}) => {
-    const job:any = Jobs.find(job => job.id == jobId)
   return (
     <div className="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
       <div className="container">
@@ -26,50 +29,41 @@ const JobDetail = ({jobId}:{
                 style={{ width: "80", height: "80px" }}
               />
               <div className="text-start ps-4">
-                <h3 className="mb-3">{job?.job_name}</h3>
+                <h3 className="mb-3">{job?.name}</h3>
                 <span className="text-truncate me-3">
-                  <i className="fa fa-map-marker-alt text-primary me-2"></i>{job.location}
+                  <i className="fa fa-map-marker-alt text-primary me-2"></i>
+                  {job?.companyAddress}
                 </span>
                 <span className="text-truncate me-3">
-                  <i className="far fa-clock text-primary me-2"></i>{job.job_nature}
+                  <i className="far fa-clock text-primary me-2"></i>
+                  {job?.timeOfWork}
                 </span>
                 <span className="text-truncate me-0">
                   <i className="far fa-money-bill-alt text-primary me-2"></i>
-                  {job.salary}
+                  {job?.salary}
                 </span>
               </div>
             </div>
 
             <div className="mb-5">
               <h4 className="mb-3">Job description</h4>
+              <p>{job?.role}</p>
+
+              <h4>Job status</h4>
               <p>
-             {job.job_description}
+                <i className="fa fa-angle-right text-primary me-2"></i>Job on
+                weekends: {job?.weekendsFree}
               </p>
-              <h4 className="mb-3">Responsibility</h4>
               <p>
-                Magna et elitr diam sed lorem. Diam diam stet erat no est est.
-                Accusam sed lorem stet voluptua sit sit at stet consetetur,
-                takimata at diam kasd gubergren elitr dolor
+                <i className="fa fa-angle-right text-primary me-2"></i>Extrapay
+                on overtime: {job?.extrapayOvertime}
               </p>
-              <ul className="list-unstyled">
-                {Array(4).fill(job.responsibility).map((respons,i) => <li key={i}>
-                  <i className="fa fa-angle-right text-primary me-2"></i>Dolor
-                  {respons}
-                </li>)}
-                
-              </ul>
+              <p>
+                <i className="fa fa-angle-right text-primary me-2"></i>Leaves
+                allowed: {job?.leavesAllowed}
+              </p>
               <h4 className="mb-3">Qualifications</h4>
-              <p>
-                Magna et elitr diam sed lorem. Diam diam stet erat no est est.
-                Accusam sed lorem stet voluptua sit sit at stet consetetur,
-                takimata at diam kasd gubergren elitr dolor
-              </p>
-              <ul className="list-unstyled">
-              {Array(4).fill(job.qualifications).map((respons,i) => <li key={i}>
-                  <i className="fa fa-angle-right text-primary me-2"></i>Dolor
-                  {respons}
-                </li>)}
-              </ul>
+              <p>{job?.qualifications}</p>
             </div>
 
             <div className="">
@@ -125,24 +119,16 @@ const JobDetail = ({jobId}:{
               <h4 className="mb-4">Job Summery</h4>
               <p>
                 <i className="fa fa-angle-right text-primary me-2"></i>Published
-                On: {job.created_at}
-              </p>
-              <p>
-                <i className="fa fa-angle-right text-primary me-2"></i>Vacancy: {job.vacancy} Position
-              </p>
-              <p>
-                <i className="fa fa-angle-right text-primary me-2"></i>Job
-                Nature: {job.job_nature}
+                On: {job?.createdAt}
               </p>
               <p>
                 <i className="fa fa-angle-right text-primary me-2"></i>Salary:
-                {job.salary}
+                {job?.salary}
               </p>
-              <p>
-                <i className="fa fa-angle-right text-primary me-2"></i>Location: {job.location}
-              </p>
+
               <p className="m-0">
-                <i className="fa fa-angle-right text-primary me-2"></i>Ending Date: {job.ending_date}
+                <i className="fa fa-angle-right text-primary me-2"></i>Ending
+                Date: {job?.closingDate}
               </p>
             </div>
             <div
@@ -151,8 +137,17 @@ const JobDetail = ({jobId}:{
             >
               <h4 className="mb-4">Company Detail</h4>
               <p className="m-0">
-                {job.company_details.about_company} located at {job.company_details.address}.<br/>
-                You can visit website at <a href={"https://"+job.company_details.website}>{job.company_details.website}</a>
+                {job?.companyDesc}
+                <br />
+                {job?.companyName} is located at
+                {job?.companyAddress}.<br />
+                {job?.companyWebsite &&
+                  "You can visit website at" +
+                  (
+                    <a href={"https://" + job?.companyWebsite}>
+                      {job?.companyWebsite}
+                    </a>
+                  )}
               </p>
             </div>
           </div>

@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import image1 from "@/resource/img/carousel-1.jpg";
 import image2 from "@/resource/img/carousel-2.jpg";
+import Link from "next/link";
 type HeroProps = {
   isHomage?: boolean,
   name?: string,
@@ -48,18 +49,18 @@ const Hero = ({isHomage = false,name,text}:HeroProps) => {
                     diam no. Kasd rebum ipsum et diam justo clita et kasd rebum
                     sea elitr.
                   </p>
-                  <a
-                    href=""
+                  <Link
+                    href="/workings-page"
                     className="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft"
                   >
-                    Search A Job
-                  </a>
-                  <a
-                    href=""
+                    Find A Job
+                  </Link>
+                  <Link
+                    href="/workings-page"
                     className="btn btn-secondary py-md-3 px-md-5 animated slideInRight"
                   >
-                    Find A Talent
-                  </a>
+                    Find An Employee
+                  </Link>
                 </div>
               </div>
             </div>

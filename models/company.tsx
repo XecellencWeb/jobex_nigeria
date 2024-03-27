@@ -4,20 +4,36 @@ const jobPostedSchema = new Schema({
   role: String,
   salary: Number,
   agePreference: String,
-  qualifications: [String],
+  qualifications: String,
+  experience: String,
   timeOfWork: String,
-  weedendsFree: Boolean,
-  extrapayOvertime: Boolean,
-  leavesAllowed: Boolean,
+  weekendsFree: String,
+  extrapayOvertime: String,
+  leavesAllowed: String,
+  companyId: Schema.Types.ObjectId,
+  companyName: String,
+  companyAddress: String,
+  companyDesc: String,
+  closingDate: Date,
+  approved: {
+    type: Boolean,
+    default: false,
+  },
+  createdAt: {
+    type: Date,
+    default: () => Date.now(),
+    immutable: true,
+  },
+  updatedAt: {
+    type: Date,
+    default: () => Date.now(),
+    immutable: false,
+  },
 });
 const companySchema = new Schema({
   name: String,
   address: String,
   desc: String,
-  jobsPosted: {
-    type: [jobPostedSchema],
-    default: [],
-  },
   createdAt: {
     type: Date,
     default: () => Date.now(),
@@ -31,8 +47,9 @@ const companySchema = new Schema({
 });
 
 export type CompanyType = InferSchemaType<typeof companySchema>;
-export type JopPostedType = InferSchemaType<typeof jobPostedSchema>;
+export type JobPostedType = InferSchemaType<typeof jobPostedSchema>;
 
 const Company = models.Company || model("Company", companySchema);
+export const Jobing = models.Job || model("Job", jobPostedSchema);
 
 export default Company;

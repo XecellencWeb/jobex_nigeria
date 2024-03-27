@@ -189,6 +189,7 @@ body {
 
 .company-header{
   margin-block: 2rem;
+  text-align: center;
 
 }
 .company-form{
@@ -218,11 +219,45 @@ body {
 .label-text{
   color: #8f8e8e;
   font-weight: 600;
-  font-size: .82rem;
+}
+
+.label-text,.radio-input{
+  font-size: .82rem
+}
+.radio-input{
+  margin-right: 1rem;
 }
 
 .company-form .submit-btn{
   display: block;
   width: min(60ch, 100%);
   padding-block: .75rem;
+}
+
+.where-fit{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 50svh;
+}
+.connect-text{
+  color: #7c7c7c;
+  margin-top: 1rem;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  --width-size: 260px;
+  width: var(--width-size);
+  height: calc(var(--width-size)/2);
+  border-radius: 200px 200px 0 0;
+  -webkit-mask: repeating-radial-gradient(farthest-side at bottom ,#0000 0,#000 1px 12%,#0000 calc(12% + 1px) 20%);
+  background:
+   radial-gradient(farthest-side at bottom,var(--primary-color) 0 95%,#0000 0) bottom/0% 0% no-repeat
+   #ddd;
+  animation: l10 2s infinite steps(6);
+}
+@keyframes l10 {
+    100% {background-size:120% 120%}
 }
