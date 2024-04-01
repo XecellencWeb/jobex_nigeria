@@ -51,7 +51,7 @@ export const addNewJob = async (formData: FormData) => {
   const filename = logo.name.split(" ").join("_");
 
   try {
-    await writeFile(path.join('/', "logos/" + filename), logoBuffer);
+    await writeFile(path.join('/', "logos", filename), logoBuffer);
   } catch (error: any) {
     return [false, "An error occured: " + error];
   }
