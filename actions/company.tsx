@@ -41,7 +41,7 @@ export const addNewJob = async (formData: FormData) => {
     jobDesc: formData.get("job-description"),
   };
 
-  const logo: any = formData.get("company-logo");
+  const logo: File | null = formData.get("company-logo") as unknown as File;
   if (!logo) return [false, "Provide company Logo"];
 
   if (!logo.type.includes("image")) return [false, "Only Images are allowed"];
@@ -51,10 +51,7 @@ export const addNewJob = async (formData: FormData) => {
   const filename = logo.name.split(" ").join("_");
 
   try {
-    await writeFile(
-      path.join(process.cwd(), "/logos/" + filename),
-      logoBuffer
-    );
+    await writeFile(path.join('/', "logos/" + filename), logoBuffer);
   } catch (error: any) {
     return [false, "An error occured: " + error];
   }
