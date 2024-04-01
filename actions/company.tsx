@@ -44,9 +44,9 @@ export const addNewJob = async (formData: FormData) => {
   const logo: any = formData.get("company-logo");
   if (!logo) return [false, "Provide company Logo"];
 
-  if(!logo.type.includes('image'))return [false, "Only Images are allowed"]
-  if(logo.size > 2097152)return [false, " Logo size must be less than 2MB"]
-   console.log(logo)
+  if (!logo.type.includes("image")) return [false, "Only Images are allowed"];
+  if (logo.size > 2097152) return [false, " Logo size must be less than 2MB"];
+  console.log(logo);
   const logoBuffer = Buffer.from(await logo.arrayBuffer());
   const filename = logo.name.split(" ").join("_");
 
@@ -58,10 +58,15 @@ export const addNewJob = async (formData: FormData) => {
   } catch (error: any) {
     return [false, "An error occured: " + error];
   }
-  await connectDb();
-  await Jobing.create({ ...jobData, companyLogo: filename });
 
-  return [true,"Job Information Posted Successfully"];
+  try {
+    await connectDb();
+    await Jobing.create({ ...jobData, companyLogo: filename });
+  } catch (error) {
+    return [false, "An error occured: " + error];
+  }
+
+  return [true, "Job Information Posted Successfully"];
 };
 
 export const addCompanyJob = async (

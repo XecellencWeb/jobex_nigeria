@@ -18,7 +18,10 @@ const AdminPage = () => {
     <div className="container">
       <div className="">
         <h4 className="mb-4">Post a Job</h4>
-        <form action={addNewJob} method="POST">
+        <form action={async (formData:FormData)=>{
+          const result = await addNewJob(formData)
+          alert(result[1])
+          }} method="POST">
           <div className="row g-3">
             <div className="col-12 col-sm-6">
               <input
