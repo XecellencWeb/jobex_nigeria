@@ -52,7 +52,7 @@ export const addNewJob = async (formData: FormData) => {
 
   try {
     await writeFile(
-      path.join(process.cwd(), "public/logos/" + filename),
+      path.join(process.cwd(), "/logos/" + filename),
       logoBuffer
     );
   } catch (error: any) {
