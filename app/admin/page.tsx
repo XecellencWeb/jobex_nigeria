@@ -3,16 +3,16 @@
 import { addNewJob } from "@/actions/company";
 import React, { useEffect } from "react";
 
-export const adminCredentials = {
+const adminCredentials = {
   username: "excojosi",
   password: "Excojosi#88881",
 };
 
 const AdminPage = () => {
-  //   if (prompt("Enter admin username") !== adminCredentials.username)
-  //     return (location.href = "/");
-  //   if (prompt("Enter admin password") !== adminCredentials.password)
-  //     return (location.href = "/");
+    if (prompt("Enter admin username") !== adminCredentials.username)
+      return (location.href = "/");
+    if (prompt("Enter admin password") !== adminCredentials.password)
+      return (location.href = "/");
 
   return (
     <div className="container">
