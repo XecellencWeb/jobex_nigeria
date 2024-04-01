@@ -48,7 +48,7 @@ const Navbar = () => {
 
   return (
     <>
-      {!user && (
+      {!user || user && (
         <div className="reg-container">
           <Link href="/login" className="reg login">
             Log in
@@ -63,7 +63,7 @@ const Navbar = () => {
           href="/"
           className="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5"
         >
-          <Image src={logo} alt='Website logo' width={150}/>
+          <img src='/img/logo1-main.png' alt='Website logo' width={150}/>
         </Link>
         <button
           type="button"
@@ -100,9 +100,9 @@ const Navbar = () => {
               Contact
             </Link>
           </div>
-          {!user ? (
+          {!user || user ? (
             <Link
-              href={`/signup?role=${roles[1]}&accesstoken=${auth_access_token}`}
+              href={`/post-a-job`}
               className="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block"
             >
               Post A Job<i className="fa fa-arrow-right ms-3"></i>

@@ -1,20 +1,12 @@
 import { InferSchemaType, Schema, model, models } from "mongoose";
 const jobPostedSchema = new Schema({
-  name: String,
-  role: String,
-  salary: Number,
-  agePreference: String,
-  qualifications: String,
-  experience: String,
-  timeOfWork: String,
-  weekendsFree: String,
-  extrapayOvertime: String,
-  leavesAllowed: String,
-  companyId: Schema.Types.ObjectId,
+  jobName: String,
   companyName: String,
+  companyWebsite: String,
   companyAddress: String,
-  companyDesc: String,
-  closingDate: Date,
+  salary: Number,
+  companyLogo: String,
+  jobDesc: String,
   approved: {
     type: Boolean,
     default: false,
@@ -30,7 +22,8 @@ const jobPostedSchema = new Schema({
     immutable: false,
   },
 });
-const companySchema = new Schema({
+
+const companySchema: any = new Schema({
   name: String,
   address: String,
   desc: String,

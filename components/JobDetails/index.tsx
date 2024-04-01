@@ -1,9 +1,6 @@
 "use client";
 
-import Jobs from "@/dummyData/jobListings.json";
 import React, { useEffect, useState } from "react";
-import logo1 from "@/resource/img/com-logo-1.jpg";
-import Image from "next/image";
 import { getJob } from "@/actions/company";
 
 const JobDetail = ({ jobId }: { jobId: any }) => {
@@ -22,9 +19,9 @@ const JobDetail = ({ jobId }: { jobId: any }) => {
         <div className="row gy-5 gx-4">
           <div className="col-lg-8">
             <div className="d-flex align-items-center mb-5">
-              <Image
+              <img
                 className="flex-shrink-0 img-fluid border rounded"
-                src={logo1}
+                src="/img/com-logo-1.jpg"
                 alt=""
                 style={{ width: "80", height: "80px" }}
               />
@@ -66,7 +63,14 @@ const JobDetail = ({ jobId }: { jobId: any }) => {
               <p>{job?.qualifications}</p>
             </div>
 
-            <div className="">
+            <strong className="">
+              To apply for this job send your CV to this email{" "}
+              <a href="mailto:jobbexnigeria@gmail.com">
+                jobbexnigeria@gmail.com
+              </a>
+            </strong>
+
+            {/* <div className="">
               <h4 className="mb-4">Apply For The Job</h4>
               <form>
                 <div className="row g-3">
@@ -108,7 +112,7 @@ const JobDetail = ({ jobId }: { jobId: any }) => {
                   </div>
                 </div>
               </form>
-            </div>
+            </div> */}
           </div>
 
           <div className="col-lg-4">

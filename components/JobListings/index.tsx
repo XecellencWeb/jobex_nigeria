@@ -1,10 +1,5 @@
-import Image from "next/image";
+
 import React from "react";
-import logo1 from "@/resource/img/com-logo-1.jpg";
-import logo2 from "@/resource/img/com-logo-2.jpg";
-import logo3 from "@/resource/img/com-logo-3.jpg";
-import logo4 from "@/resource/img/com-logo-4.jpg";
-import logo5 from "@/resource/img/com-logo-5.jpg";
 import { CompanyType, JobPostedType } from "@/models/company";
 
 const JobListings = ({
@@ -39,9 +34,9 @@ const JobListings = ({
                 <div key={job._id} className="job-item p-4 mb-4">
                   <div className="row g-4">
                     <div className="col-sm-12 col-md-8 d-flex align-items-center">
-                      <Image
+                      <img
                         className="flex-shrink-0 img-fluid border rounded"
-                        src={logo1}
+                        src='/img/com-logo-1.jpg'
                         alt=""
                         style={{ width: "80px", height: "80px" }}
                       />

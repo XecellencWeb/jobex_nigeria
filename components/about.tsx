@@ -1,9 +1,5 @@
 import React from 'react'
 import Image from 'next/image'
-import about1 from '@/resource/img/about-1.jpg'
-import about2 from '@/resource/img/about-2.jpg'
-import about3 from '@/resource/img/about-3.jpg'
-import about4 from '@/resource/img/about-4.jpg'
 
 
 const About = () => {
@@ -14,16 +10,16 @@ const About = () => {
                     <div className="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                         <div className="row g-0 about-bg rounded overflow-hidden">
                             <div className="col-6 text-start">
-                                <Image className="img-fluid w-100" src={about1} alt=''/>
+                                <img className="img-fluid w-100" src='/img/about-1.jpg' alt=''/>
                             </div>
                             <div className="col-6 text-start">
-                                <Image className="img-fluid" src={about2} style={{width: "85%", marginTop: "15%"}} alt=''/>
+                                <img className="img-fluid" src='/img/about-2.jpg' style={{width: "85%", marginTop: "15%"}} alt=''/>
                             </div>
                             <div className="col-6 text-end">
-                                <Image className="img-fluid" src={about3} style={{width: "85%"}} alt=''/>
+                                <img className="img-fluid" src='/img/about-3.jpg' style={{width: "85%"}} alt=''/>
                             </div>
                             <div className="col-6 text-end">
-                                <Image className="img-fluid w-100" src={about4} alt=''/>
+                                <img className="img-fluid w-100" src='/img/about-4.jpg' alt=''/>
                             </div>
                         </div>
                     </div>
