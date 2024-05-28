@@ -1,7 +1,8 @@
 "use client";
 
 import { addNewJob } from "@/actions/company";
-import React, { useEffect } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import React, { useEffect, useState } from "react";
 
 const adminCredentials = {
   username: "excojosi",
@@ -9,19 +10,37 @@ const adminCredentials = {
 };
 
 const AdminPage = () => {
-    // if (prompt("Enter admin username") !== adminCredentials.username)
-    //   return (location.href = "/");
-    // if (prompt("Enter admin password") !== adminCredentials.password)
-    //   return (location.href = "/");
+  const navigate = useRouter();
+  const pathname = usePathname();
+  const [canIn, setCanIn] = useState(false);
 
+  useEffect(() => {
+    return () => {
+      if (pathname !== "/admin") return;
+      if (prompt("Enter admin username") !== adminCredentials.username) {
+        setCanIn(false);
+        navigate.replace("/");
+      }
+      if (prompt("Enter admin password") !== adminCredentials.password) {
+        setCanIn(false);
+        navigate.replace("/");
+      }
+
+      setCanIn(true);
+    };
+  }, []);
+  if (!canIn) return;
   return (
     <div className="container">
       <div className="">
-        <h4 className="mb-4">Post a Job</h4>
-        <form action={async (formData:FormData)=>{
-          const result = await addNewJob(formData)
-          alert(result[1])
-          }} method="POST">
+        <h4 className="mb-4 mt-4">Post a Job</h4>
+        <form
+          action={async (formData: FormData) => {
+            const result = await addNewJob(formData);
+            alert(result[1]);
+          }}
+          method="POST"
+        >
           <div className="row g-3">
             <div className="col-12 col-sm-6">
               <input

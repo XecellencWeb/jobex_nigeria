@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 type HeroProps = {
   isHomage?: boolean;
@@ -57,18 +56,17 @@ const Hero = ({ isHomage = false, name, text }: HeroProps) => {
                     Find The Perfect Job That You Deserved
                   </h1>
                   <p className="fs-5 fw-medium text-white mb-4 pb-2">
-                    Vero elitr justo clita lorem. Ipsum dolor at sed stet sit
-                    diam no. Kasd rebum ipsum et diam justo clita et kasd rebum
-                    sea elitr.
+                    No need to go through all the rest of getting a Job. You can
+                    get a Job online simply by following our procedures.
                   </p>
                   <Link
-                    href="/workings-page"
+                    href="/job"
                     className="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft"
                   >
                     Find A Job
                   </Link>
                   <Link
-                    href="/workings-page"
+                    href="/post-a-job"
                     className="btn btn-secondary py-md-3 px-md-5 animated slideInRight"
                   >
                     Find An Employee
