@@ -62,7 +62,7 @@ const Home = () => {
   return (
     <>
       <Hero isHomage={true} />
-      <Search />
+      {/* <Search /> */}
       <About />
       <JobListings jobs={jobs} />
       <Testimonies />

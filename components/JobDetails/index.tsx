@@ -20,13 +20,19 @@ const JobDetail = ({ jobId }: { jobId: any }) => {
           <div className="col-lg-8">
             <div className="d-flex align-items-center mb-5">
               <img
-                className="flex-shrink-0 img-fluid border rounded"
-                src="/img/com-logo-1.jpg"
+                className="border rounded"
+                src={job?.companyLogo || "/img/josteer logo.webp"}
                 alt=""
-                style={{ width: "80", height: "80px" }}
+                style={{
+                  width: 150,
+                  height: 150,
+                  objectFit: "contain",
+                  objectPosition: "center",
+                  padding: 5,
+                }}
               />
               <div className="text-start ps-4">
-                <h3 className="mb-3">{job?.name}</h3>
+                <h3 className="mb-3">{job?.jobName}</h3>
                 <span className="text-truncate me-3">
                   <i className="fa fa-map-marker-alt text-primary me-2"></i>
                   {job?.companyAddress}

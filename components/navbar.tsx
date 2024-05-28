@@ -48,7 +48,7 @@ const Navbar = () => {
 
   return (
     <>
-      {!user || user && (
+      {/* {!user || user && (
         <div className="reg-container">
           <Link href="/login" className="reg login">
             Log in
@@ -57,13 +57,13 @@ const Navbar = () => {
             Sign up
           </Link>
         </div>
-      )}
+      )} */}
       <nav className="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0 text-gray-600">
         <Link
           href="/"
           className="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5"
         >
-          <img src='/img/logo1-main.png' alt='Website logo' width={150}/>
+          <img src='/img/josteer logo.webp' alt='Website logo' width={100}/>
         </Link>
         <button
           type="button"

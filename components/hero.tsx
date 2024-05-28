@@ -7,7 +7,7 @@ type HeroProps = {
 
 const Hero = ({ isHomage = false, name, text }: HeroProps) => {
   const bgStyle = {
-    background: "rgba(43, 57, 64, .5)",
+    background: "rgba(43, 57, 64, .7)",
   };
   if (!isHomage) {
     return (
@@ -53,10 +53,10 @@ const Hero = ({ isHomage = false, name, text }: HeroProps) => {
               <div className="row justify-content-start">
                 <div className="col-10 col-lg-8">
                   <h1 className="display-3 text-white animated slideInDown mb-4">
-                    Find The Perfect Job That You Deserved
+                    Let Us Manage Your Job Business
                   </h1>
                   <p className="fs-5 fw-medium text-white mb-4 pb-2">
-                    No need to go through all the rest of getting a Job. You can
+                    No need to go through all the stress of getting a Job. You can
                     get a Job online simply by following our procedures.
                   </p>
                   <Link

@@ -33,7 +33,7 @@ const AdminPage = () => {
   return (
     <div className="container">
       <div className="">
-        <h4 className="mb-4 mt-4">Post a Job</h4>
+        <h4 className="mb-4 mt-5">Post a Job</h4>
         <form
           action={async (formData: FormData) => {
             const result = await addNewJob(formData);

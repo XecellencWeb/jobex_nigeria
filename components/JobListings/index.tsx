@@ -1,4 +1,3 @@
-
 import React from "react";
 import { CompanyType, JobPostedType } from "@/models/company";
 
@@ -31,18 +30,28 @@ const JobListings = ({
           <div className="tab-content">
             <div id="tab-1" className="tab-pane fade show p-0 active">
               {Jobs?.map((job: any) => (
-                <div key={job._id} className="job-item p-4 mb-4">
+                <div
+                  key={job._id}
+                  style={{ background: "#fff" }}
+                  className="job-item p-4 mb-4"
+                >
                   <div className="row g-4">
                     <div className="col-sm-12 col-md-8 d-flex align-items-center">
                       <img
-                        className="flex-shrink-0 img-fluid border rounded"
-                        src='/img/com-logo-1.jpg'
+                         className="border rounded"
+                        src={job.companyLogo || "/img/josteer logo.webp"}
                         alt=""
-                        style={{ width: "80px", height: "80px" }}
+                        style={{
+                          width: "80px",
+                          height: "80px",
+                          objectFit: "contain",
+                          objectPosition: "center",
+                          padding: 5
+                        }}
                       />
                       <div className="text-start ps-4">
                         <h5 className="mb-3">
-                          {job.name} needed at {job.companyName}
+                          {job.jobName} needed at {job.companyName}
                         </h5>
                         <span className="text-truncate me-3">
                           <i className="fa fa-map-marker-alt text-primary me-2"></i>
@@ -71,7 +80,7 @@ const JobListings = ({
                         <a
                           className="btn btn-primary"
                           href={`/job/${job._id}${
-                            isCompanyPage ? companyQueryString:''
+                            isCompanyPage ? companyQueryString : ""
                           }`}
                         >
                           {isCompanyPage ? "View Details" : "Apply Now"}

@@ -5,6 +5,8 @@ import User from "@/models/user";
 import { connectDb } from "@/utils/db";
 import path from "path";
 import { writeFile } from "fs/promises";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import { fileStore } from "@/firebase/set-up";
 
 export const registerCompany = async (formData: FormData, ownerId: string) => {
   const companyData: any = {
@@ -50,15 +52,18 @@ export const addNewJob = async (formData: FormData) => {
   const logoBuffer = Buffer.from(await logo.arrayBuffer());
   const filename = logo.name.split(" ").join("_");
 
+  const logoRef = ref(fileStore, "jobsteer-job-logos/" + filename);
+  let storename = "";
   try {
-    await writeFile(path.join(process.cwd(), filename), logoBuffer);
+    const snapshot = await uploadBytes(logoRef, logo);
+    storename = await getDownloadURL(snapshot.ref);
   } catch (error: any) {
     return [false, "An error occured: " + error];
   }
 
   try {
     await connectDb();
-    await Jobing.create({ ...jobData, companyLogo: filename });
+    await Jobing.create({ ...jobData, companyLogo: storename });
   } catch (error) {
     return [false, "An error occured: " + error];
   }
