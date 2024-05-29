@@ -65,7 +65,7 @@ const Home = () => {
       {/* <Search /> */}
       <About />
       <JobListings jobs={jobs} />
-      <Testimonies />
+      {/* <Testimonies /> */}
     </>
   );
 };
